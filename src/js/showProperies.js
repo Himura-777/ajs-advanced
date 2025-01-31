@@ -2,8 +2,10 @@ export default function showProperties(obj, order) {
 	const result = [];
 
 	for (const key of order) {
-		if (obj.hasOwnProperty(key)) {
-			result.push({ key, value: obj[key] });
+		if (Object.prototype.hasOwnProperty.call(obj, key)) {
+			{
+				result.push({ key, value: obj[key] });
+			}
 		}
 	}
 
